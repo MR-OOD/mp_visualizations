@@ -1,4 +1,4 @@
-# Pelvic MRI Project: Visualization & Reporting Suite
+# MR-OOD: Visualization & Reporting Suite
 This repository contains the Jupyter Notebooks used to generate data statistics and produce high-quality visualizations for the project report.
 
 ## Notebook Overview
