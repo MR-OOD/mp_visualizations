@@ -1,18 +1,17 @@
 # MR-OOD: Visualization & Reporting Suite
-This repository contains the tools and Jupyter Notebooks used to generate data statistics and produce high-quality visualizations for the MR Out-of-Distribution (OOD) anomaly detection project.
+This repository contains the tools and Jupyter Notebooks used to generate data statistics and produce visualizations for the MR Out-of-Distribution (OOD) anomaly detection project.
 
 ## Features
 - **Data Diagnostics**: Verify NIfTI consistency across different channel formats (1-channel vs. 2.5D).
 - **Statistical Reporting**: Generate patient and slice distribution analysis for dataset versioning.
-- **Preprocessing Pipeline**: Automated body-masking, 224x224 resizing, and anatomical cropping for standardized reporting.
-- **Comparative Visualization**: High-resolution, 3-panel reporting of raw MRI, Ground Truth, and Model Predictions.
+- **Comparative Visualization**: Standardized reporting of raw MR, ground truth, and model predictions.
 
 ---
 
 ## File Overview
 
 ### Python Scripts
-- **`visualize.py`**: A command-line tool designed to generate standardized 3-panel comparison plots. It automates anatomical alignment, 90° rotation, and lateral cropping to ensure focus on the relevant regions of interest.
+- **`visualize.py`**: A command-line tool designed to generate standardized 3-panel comparison plots.
 
 ### Jupyter Notebooks
 - **`channel_test.ipynb`**: Diagnostic tool to verify NIfTI image consistency and distinguish between 2.5D and 1-channel data formats.
@@ -24,15 +23,18 @@ This repository contains the tools and Jupyter Notebooks used to generate data s
 
 ## Usage: Visualization Script
 
-The `visualize.py` script is used to generate figures for the discussion section of the report. It produces a 1x3 grid for a specific slice or all slices containing anomalies.
+The `visualize.py` script generates side-by-side comparisons of the MR, the ground truth mask, and the predicted model mask. It produces a 1x3 grid for a specific slice (if provided) or for all slices in a patient volume containing masks.
 
 ### Command Example
 ```bash
 python visualize.py \
-  --mr_path /path_to_mr/1PA079/mr.nii.gz \
-  --predicted_mask_path /path_to_prediciton/PA079.nii.gz \
-  --ground_truth_path /path_to_ground_truth/PA079.nii.gz \
+  --mr_path /path_to_mr/1PA118/mr.nii.gz \
+  --predicted_mask_path /path_to_prediciton/PA118.nii.gz \
+  --ground_truth_path /path_to_ground_truth/PA118.nii.gz \
   --output_directory ./results_visualization \
-  --model_name "RD4AD" \
+  --model_name "PatchCore" \
   --saving_format png \
   --patient_slice 47
+```
+### Example Vizualization
+![Example](figures/slice_047.png)
