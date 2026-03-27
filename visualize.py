@@ -164,7 +164,7 @@ def main():
         gt_c = gt_bin[:, col_min:col_max + 1, slice_idx]
         pred_c = pred_bin[:, col_min:col_max + 1, slice_idx]
 
-        left_crop, right_crop = 25, 10
+        left_crop, right_crop = 5, 5
         mr_r = np.rot90(mr_c, k=-1)[:, left_crop:-right_crop]
         gt_r = np.rot90(gt_c, k=-1)[:, left_crop:-right_crop]
         pred_r = np.rot90(pred_c, k=-1)[:, left_crop:-right_crop]
