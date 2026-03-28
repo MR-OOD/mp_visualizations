@@ -95,9 +95,9 @@ def plot_slice(mr_slice_r, gt_slice_r, pred_slice_r, slice_idx, output_dir, fmt,
     for ax in axs:
         ax.axis('off')
 
-    # 1. Clean MRI
+    # 1. Clean MR
     axs[0].imshow(mr_slice_r, cmap='gray')
-    axs[0].set_title('MRI', fontsize=14)
+    axs[0].set_title('MR', fontsize=14)
 
     # 2. Ground Truth Overlay
     axs[1].imshow(mr_slice_r, cmap='gray')
