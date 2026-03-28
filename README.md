@@ -36,5 +36,3 @@ python visualize.py \
   --saving_format png \
   --patient_slice 47
 ```
-### Example Vizualization
-![Example](figures/slice_047.png)
